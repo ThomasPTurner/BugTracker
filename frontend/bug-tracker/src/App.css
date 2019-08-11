@@ -1,0 +1,32 @@
+.App {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "body"
+        "footer";
+    grid-template-rows: 10vh 80vh 10vh;
+    text-align: center
+}
+
+.header {
+    grid-area: header;
+    border: 1px black solid
+}
+
+.body {
+    grid-area: body;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.footer {
+    grid-area: footer
+}
+
+.bugCard {
+    border: 1px black solid;
+    border-radius: 10px;
+}
