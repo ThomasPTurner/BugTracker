@@ -2,6 +2,7 @@ import './App.css'
 import React, { Component } from 'react';
 import axios from 'axios'
 import moment from 'moment';
+import PostBug from './components/PostBug';
 
 const BASE_URL = 'http://localhost:9090/api'
 
@@ -10,11 +11,12 @@ class App extends Component {
     bugs : []
   }
   render() {
-    const {bugs} = this.state
+    const {bugs, posting} = this.state
     return (
       <div className="App">
         <h3 className="header">Bug Tracker</h3>
         <body className="body">
+          <PostBug />
           {
             bugs.map(({id, title, body, created_at, assigned_to, open}) => {
               return (
