@@ -1,13 +1,13 @@
-const data = require('../data')
+const data = require('../')
 
-exports.seed = () => {
+exports.seed = function(knex, PromiseConstructor) {
     return knex.migrate.rollback()
         .then(() => {
-            return knex.migate.latest()
+            return knex.migrate.latest()
         })
         .then(()=>{
             const insertUsers = knex('users').insert(data.users)
-            const insertBugs = knex('bugs').inster(data.bugs)
+            const insertBugs = knex('bugs').insert(data.bugs)
             Promise.all([insertUsers, insertBugs])
         })
 }
