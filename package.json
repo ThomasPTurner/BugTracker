@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "seed:test" : "set NODE_ENV=test && knex migrate:latest --knexfile backend/knexfile.js",
+    "setup-dbs": "psql -f ./backend/db/setup.sql",
+    "seed:test": "set NODE_ENV=test && knex migrate:latest --knexfile backend/knexfile.js",
     "test": "mocha spec"
   },
   "repository": {
