@@ -8,10 +8,11 @@ app.use(express.json())
 app.use('/api', apiRouter )
 
 
-app.use('/*' , (err, req, res, next) => {
+app.use('/*' , (req, res, next) => {
     res.status(404).send({status: 400, msg: "page not found"})
 })
 app.use((err, req, res, next) => {
+    console.log(err)
     res.status(500).send({status: 500, msg: "internal server error"})
 })
 

@@ -1,7 +1,7 @@
 const bugsData = require('./bugs')
-const usersData = require('./users')
+const usersData  = require('./users')
 
-exports.data = {
+module.exports = {
     bugsData,
     usersData
 }
