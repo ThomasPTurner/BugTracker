@@ -1,4 +1,4 @@
-const  { fetchBugs } = require('../models')
+const  { fetchBugs, createBug } = require('../models')
 
 exports.getBugs = (req, res, next)=> {
     return fetchBugs()
@@ -8,6 +8,10 @@ exports.getBugs = (req, res, next)=> {
         .catch(next)
 }
 
-exports.postBugs = (req, res, next) => {
-    return res.status(201).send()
+exports.postBugs = ({body: { title, body }}, res, next) => {
+    return createBug({ title, body })
+        .then((bug) => {
+            return res.status(201).send({bug})
+        })
+        .catch(next)
 }

@@ -6,7 +6,7 @@ const request = require('supertest')(app)
 const {connection} = require('../backend/connection')
 process.env.NODE_ENV = 'test'
 describe('Bug Tracker App', ()=> {
-    beforeEach(() => connection.seed.run());
+    // beforeEach(async () => await connection.seed.run());
     after(()=> {
         connection.destroy()
     })
@@ -21,7 +21,7 @@ describe('Bug Tracker App', ()=> {
                 it('gets a list of bugs', ()=> {
                     return request
                         .get('/api/bugs/')
-                        .then(({ body: { bugs } }) => {
+                        .then(({ body: { bugs }}) => {
                             expect(bugs.length).to.greaterThan(0)
                         })
                 })
@@ -34,6 +34,29 @@ describe('Bug Tracker App', ()=> {
                         })
                 })
                 // NICE TO HAVE : error handling bad endpoints, methods, ect.
+            })
+            describe('POST', ()=> {
+                it('201 on request to endpoint', () => {
+                    return request
+                        .post('/api/bugs/')
+                        .send({
+                            title: 'test',
+                            body: 'testing'
+                        })
+                        .expect(201)
+                })
+                it('makes a new bug', () => {
+                    return request
+                        .post('/api/bugs/')
+                        .send({
+                            title: 'test',
+                            body: 'testing'
+                        })
+                        .expect(201)
+                        .then(({ body: {bug} }) => { 
+                            expect(bug).to.not.be.undefined
+                        })
+                })
             })
         })
     })

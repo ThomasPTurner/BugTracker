@@ -6,4 +6,10 @@ const fetchBugs = () => {
         .from('bugs')
 }
 
-module.exports = { fetchBugs }
+const createBug = (bug) => { 
+    return connection('bugs')
+        .insert(bug)
+        .returning('*')
+}
+
+module.exports = { fetchBugs, createBug }

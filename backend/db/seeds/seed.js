@@ -5,7 +5,7 @@ exports.seed = function(knex, PromiseConstructor) {
         .then(() => {
             return knex.migrate.latest()
         })
-        .then(()=>{
+        .then(() => {
             const insertUsers = knex('users').insert(usersData)
             const insertBugs = knex('bugs').insert(bugsData)
             Promise.all([insertUsers, insertBugs])

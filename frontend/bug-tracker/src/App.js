@@ -22,7 +22,7 @@ class App extends Component {
                   <p>Title: {title}</p>
                   <p>Description: {body}</p>
                   <p>{assigned_to ? `Assigned to ${assigned_to}` : 'Unassigned' }</p>
-                  <p>{created_at}</p>
+                  <p>Created: {moment(created_at).format('DD/MM/YYYY HH:MM')}</p>
                   <p>Status: {open ? 'open' : 'closed' }</p>
                 </div>
               )
