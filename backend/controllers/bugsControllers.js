@@ -5,6 +5,9 @@ exports.getBugs = (req, res, next)=> {
         .then(bugs => {
             return res.status(200).send({bugs})
         })
-        .catch(console.log)
+        .catch(next)
 }
 
+exports.postBugs = (req, res, next) => {
+    return res.status(201).send()
+}

@@ -1,7 +1,9 @@
 const { Router } = require('express')
 const bugsRouter = Router()
-const { getBugs } = require('../controllers')
+const { getBugs, postBugs } = require('../controllers')
 
-bugsRouter.get('/', getBugs)
+bugsRouter.route('/')
+    .get(getBugs)
+    .post(postBugs)
 
 module.exports = bugsRouter
