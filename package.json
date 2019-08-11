@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "seed:test" : "set NODE_ENV=test && knex migrate:latest --knexfile backend/knexfile.js",
+    "test": "mocha spec"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/ThomasPTurner/BugTracker#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "knex": "^0.19.1",
     "pg": "^7.12.1",

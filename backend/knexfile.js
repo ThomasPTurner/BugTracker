@@ -1,6 +1,6 @@
 const ENV = process.env.NODE_ENV || 'development'
 const { DB_URL } = process.env
-
+console.log(ENV)
 const baseConfig = {
     client: 'pg',
     migrations: {
@@ -15,14 +15,14 @@ const customConfig = {
     development: {
         connection: {
             database: 'bug_tracker',
-            username: 'tom',
+            username: 'postgres',
             password: 'password'
         }
     },
     test: {
         connection: {
             database: 'bug_tracker_test',
-            username: 'tom',
+            username: 'postgres',
             password: 'password'
         }
     },
