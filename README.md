@@ -30,7 +30,7 @@ https://bug-tracker-tech-test.herokuapp.com/api/bugs
 a global installation of the following is required:
 
 ``
-npm i pg knex nodemon -g
+npm i pg knex nodemon netlify -g
 ``
 
 ### Installing
@@ -177,6 +177,18 @@ To host elsewhere, the package.JSON script will need to be amended:
 ```
 "seed:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex migrate:latest && NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex seed:run",
 ```
+
+#### Hosting the front end:
+
+This was done with netlify. Simply run:
+
+
+```
+netlify deploy --prod
+```
+and follow the on screen promps. The build directory is in the `backend/build` folder.
+
+
 ### Built With
 
 ###### [React]
