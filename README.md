@@ -4,6 +4,7 @@
 An API to serve a reddit-like social media website's frontend.
 
 ###Prerequisites
+
 ```
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -16,10 +17,13 @@ An API to serve a reddit-like social media website's frontend.
     "moment": "^2.24.0"
 ```
 
-###Installing
+##Installing
 #clone the repo
 
+```
 $ git clone https://github.com/ThomasPTurner/BugTracker.git
+```
+
 #Create a file in the backend directory named "knexfile.js":
 
 For ubutu users the file contents should be:
