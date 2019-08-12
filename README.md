@@ -33,15 +33,15 @@ a global installation of the following is required:
 npm i pg knex nodemon -g
 ``
 
-## Installing
+### Installing
 
-# clone the repo
+#### clone the repo
 
 ```
 $ git clone https://github.com/ThomasPTurner/BugTracker.git
 ```
 
-# Create a file in the backend directory named "knexfile.js":
+#### Create a file in the backend directory named "knexfile.js":
 
 For ubutu users the file contents should be:
 ```
@@ -87,7 +87,7 @@ See postgress's documentation for now to set up postgress in your environment.
 
 This will setup your database connections.
 
-# Run these scripts from the project directory:
+##### Run these scripts from the project directory:
 
 ```
 $ npm i
@@ -99,7 +99,7 @@ This will setup the database have the server listening. The default listen port 
 
 ### To run the tests:
 
-# set up and run the tests:
+#### set up and run the tests:
 
 Run the following commands in the project directory:
 
@@ -131,7 +131,7 @@ describe('api/bugs', () => {
 
 This example test checks that a valid GET request will return an array of objects with the correct keys.
 
-## Running locally
+### Running locally
 
 To have the app run locally enter the following commands in the project directory:
 
@@ -143,7 +143,7 @@ npm run frontend:start
 Note that this will require port 9090 to be available.
 These command will open the backend and then frontend servers.
 
-## Deployment
+### Deployment
 This repo is set up to be hosted on heroku for the backend and database, netlify for the frontend.
 
 To deploy another, follow the following steps:
