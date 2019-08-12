@@ -1,6 +1,5 @@
-import axios from "axios"
 import React, { Component } from 'react';
-const BASE_URL = 'http://localhost:9090/api'
+import API from '../utils'
 
 
 class PostBug extends Component {
@@ -40,11 +39,13 @@ class PostBug extends Component {
   submit =  async (event) => {
     event.preventDefault()
     const {title, body} = this.state
-    const newBug = await axios.post(`${BASE_URL}/bugs`,{title, body})
+    const newBug = await API.postBug(title, body)
     this.setState({
         title: "",
-        body: ""
+        body: "",
+        posting: false
     })
+    this.props.optimisticallyRenderBug()
     return newBug
   }
 }

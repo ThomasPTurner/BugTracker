@@ -15,7 +15,7 @@
     border: 1px black solid
 }
 
-.body {
+.main {
     grid-area: body;
     display: flex;
     flex-direction: column;

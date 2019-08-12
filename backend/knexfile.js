@@ -3,10 +3,10 @@ const { DB_URL } = process.env
 const baseConfig = {
     client: 'pg',
     migrations: {
-        directory : 'backend/db/migrations'
+        directory : 'db/migrations'
     },
     seeds: {
-        directory : 'backend/db/seeds'
+        directory : 'db/seeds'
     }
 }
 

@@ -1,4 +1,4 @@
-exports.bugs = [
+bugsData = [
     {
         title: "There's a snake in my boots",
         body: "please can this be removed"
@@ -8,3 +8,5 @@ exports.bugs = [
         body: "Please install new waterhole"
     }
 ]
+
+module.exports = bugsData

@@ -1,4 +1,4 @@
-exports.users = [
+usersData = [
   {
     name: 'Tom'
   },
@@ -9,3 +9,5 @@ exports.users = [
     name: 'Harry'
   },
 ];
+
+module.exports = usersData

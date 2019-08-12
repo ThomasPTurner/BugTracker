@@ -1,21 +1,19 @@
 import './App.css'
 import React, { Component } from 'react';
-import axios from 'axios'
+import API from './utils'
 import moment from 'moment';
 import PostBug from './components/PostBug';
-
-const BASE_URL = 'http://localhost:9090/api'
 
 class App extends Component {
   state = {
     bugs : []
   }
   render() {
-    const {bugs, posting} = this.state
+    const { bugs } = this.state
     return (
       <div className="App">
         <h3 className="header">Bug Tracker</h3>
-        <body className="body">
+        <main className="main">
           <PostBug />
           {
             bugs.map(({id, title, body, created_at, assigned_to, open}) => {
@@ -30,18 +28,16 @@ class App extends Component {
               )
             })
           }
-        </body>
+        </main>
         <p className="footer">Created By Thomas Turner</p> 
       </div>
     );
   }
   componentDidMount() {
-    this.getBugs()
-  }
-
-  getBugs = async () => {
-    const {data: {bugs}} = await axios.get(`${BASE_URL}/bugs`)
-    this.setState({ bugs })
+    API.getBugs()
+      .then(bugs => {
+        this.setState({bugs})
+      })
   }
 }
 
