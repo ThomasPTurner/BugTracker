@@ -1,3 +1,4 @@
 backend/node_modules
 backend/knexfile.js
+node_modules
 frontend/bug-tracker/node_modules
