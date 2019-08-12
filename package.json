@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "NODE_ENV=test nodemon run backend/listen.js",
+    "seed:prod": "cd backend/ && npm run seed:prod && cd ..",
     "setup-dbs": "psql -f ./backend/db/setup.sql",
-    "seed:test": "set NODE_ENV=test && knex migrate:latest --knexfile backend/knexfile.js",
+    "seed:test": "cd backend/ && npm run seed:test && cd ..",
     "test": "mocha spec"
   },
   "repository": {

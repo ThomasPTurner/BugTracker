@@ -2,7 +2,7 @@ const  { fetchBugs, createBug } = require('../models')
 
 exports.getBugs = (req, res, next)=> {
     return fetchBugs()
-        .then(bugs => {
+    .then(bugs => {
             return res.status(200).send({bugs})
         })
         .catch(next)
