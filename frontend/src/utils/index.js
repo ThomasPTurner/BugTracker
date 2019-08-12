@@ -11,7 +11,7 @@ const postBug = async (title, body)=> {
     return bug
 }      
 
-module.exports =  {
+export default {
     getBugs,
     postBug
 }
