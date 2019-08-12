@@ -11,14 +11,26 @@ describe('Bug Tracker App', ()=> {
         connection.destroy()
     })
     describe('/api', () => {
-        describe('/bugs', ()=> {
-            describe('GET', ()=> {
-                it('200 on request to endpoint', ()=> {
+        describe('/bugs', () => {
+            describe('Bad methods', () => {
+                it('PUT', () => {
+                    return request
+                        .put('/api/bugs/')
+                        .expect(405)
+                })
+                it('DELETE', () => {
+                    return request 
+                        .delete('/api/bugs/')
+                        .expect(405)
+                })
+            })
+            describe('GET', () => {
+                it('200 on request to endpoint', () => {
                     return request
                         .get('/api/bugs/')
                         .expect(200)
                 })
-                it('gets a list of bugs', ()=> {
+                it('gets a list of bugs', () => {
                     return request
                         .get('/api/bugs/')
                         .then(({ body: { bugs }}) => {
