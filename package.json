@@ -8,6 +8,7 @@
     "seed:prod": "cd backend/ && npm run seed:prod",
     "setup-dbs": "psql -f ./backend/db/setup.sql",
     "seed:test": "cd backend/ && npm run seed:test",
+    "seed:dev": "cd backend/ && npm run seed:dev",
     "test": "mocha spec",
     "frontend:start": "cd frontend && npm start"
   },
