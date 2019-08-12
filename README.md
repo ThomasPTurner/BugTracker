@@ -178,10 +178,15 @@ To host elsewhere, the package.JSON script will need to be amended:
 "seed:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex migrate:latest && NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex seed:run",
 ```
 ### Built With
-[React] - frontend framework
-[PostgresSQL] - database interaction
-[knex] - SQL query builder
-Contributing
+
+###### [React]
+frontend framework
+###### [PostgresSQL]
+database interaction
+###### [knex]
+SQL query builder
+
+## Contributing
 Feel free to contribute.
 
 ### Versioning
