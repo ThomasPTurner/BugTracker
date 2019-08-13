@@ -129,7 +129,7 @@ describe('api/bugs', () => {
 }
 ```
 
-This example test checks that a valid GET request will return an array of objects with the correct keys.
+This example test checks that a valid GET request will return an array off the key of "bugs".
 
 ### Running locally
 
